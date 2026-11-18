@@ -284,7 +284,13 @@ Las coordenadas del catálogo se corrigen en el lugar:
 
 La suite valida cálculos geográficos, campo de visión, motor AR, pasaporte y ViewModel. Resultado: **42 pruebas aprobadas**.
 
-![Pruebas de Flutter](capturas/pruebas_flutter.png)
+### Ciclo TDD: rojo a verde
+
+La captura roja reproduce de forma controlada el momento previo a implementar una regla; la verde corresponde a la suite final del repositorio.
+
+| 🔴 Prueba que solicita código faltante | 🟢 Implementación terminada |
+|---|---|
+| ![Fase roja](capturas/tdd_rojo_error.png) | ![Pruebas aprobadas](capturas/pruebas_flutter.png) |
 
 ---
 
