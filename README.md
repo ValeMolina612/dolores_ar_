@@ -290,7 +290,7 @@ La captura roja reproduce de forma controlada el momento previo a implementar un
 
 | 🔴 Prueba que solicita código faltante | 🟢 Implementación terminada |
 |---|---|
-| ![Fase roja](capturas/tdd_rojo_error.png) | ![Pruebas aprobadas](capturas/pruebas_flutter.png) |
+| ![Fase roja](capturas/tdd_rojo_error.png) | ![Pruebas aprobadas en la terminal de VS Code](capturas/pruebas_vscode.png) |
 
 ---
 
