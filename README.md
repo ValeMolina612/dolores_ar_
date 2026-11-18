@@ -1,4 +1,4 @@
-# 🧭 Dolores AR
+#  Dolores AR
 
 App turística con **realidad aumentada** para visitar **Dolores Hidalgo, Guanajuato**, desarrollada en **Flutter** con **TDD** (Desarrollo Guiado por Pruebas).
 
@@ -10,7 +10,7 @@ App turística con **realidad aumentada** para visitar **Dolores Hidalgo, Guanaj
 
 ---
 
-## 📖 Descripción
+##  Descripción
 
 Al levantar el teléfono en la Plaza Principal, la app muestra etiquetas flotando sobre la cámara: *"Parroquia de Nuestra Señora de los Dolores, 120 m"*, *"Nieves del Jardín, 25 m"*. Al girar, las etiquetas se desplazan; al tocar una, se muestra su historia.
 
@@ -21,23 +21,8 @@ La app incluye dos tipos de realidad aumentada:
 | **RA por ubicación** (núcleo del proyecto) | GPS + brújula + cámara. Todo se calcula con trigonometría, por eso es ideal para TDD. |
 | **RA de superficie** | Coloca un modelo 3D (`.glb`) sobre el piso o una mesa con ARCore (Android) y Quick Look (iPhone), usando `model_viewer_plus`. |
 
----
 
-## ✨ Características
-
-- 📍 Distancia entre coordenadas GPS con la **fórmula de Haversine**.
-- 🧭 **Rumbo** inicial y manejo del salto de ángulos 359° → 1°.
-- 📐 Conversión de ángulo a posición en pantalla con el **campo de visión (FOV)**.
-- 🎚️ **Filtro pasa-bajas circular** para que las etiquetas no tiemblen.
-- 🏷️ Etiquetas con **escala y profundidad** (lo lejano es más pequeño y sube al horizonte).
-- 🛂 **Pasaporte turístico**: ganas un sello al estar a ≤ 40 m de un lugar.
-- 🎓 **Modo demo** con deslizador de brújula, para practicar en el salón sin estar en Dolores Hidalgo.
-- 🧊 Visor de **modelo 3D** en realidad aumentada.
-- 🔒 Privacidad y seguridad: permiso de ubicación mínimo, errores sin detalles internos, aviso de seguridad física.
-
----
-
-## 🧰 Tecnologías
+##  Tecnologías
 
 - [Flutter](https://flutter.dev) / Dart (SDK `>=3.0.0 <4.0.0`)
 - [`camera`](https://pub.dev/packages/camera): cámara trasera
@@ -47,7 +32,7 @@ La app incluye dos tipos de realidad aumentada:
 
 ---
 
-## 🗂️ Estructura del proyecto
+##  Estructura del proyecto
 
 ```
 dolores_ar/
@@ -80,7 +65,7 @@ dolores_ar/
 
 ---
 
-## 🔁 Ciclo TDD
+## Ciclo TDD
 
 1. 🔴 **ROJO**: escribe la prueba (debe fallar).
 2. 🟢 **VERDE**: escribe el código mínimo para que pase.
@@ -90,7 +75,7 @@ Como la matemática y las fuentes de datos están detrás de contratos (interfac
 
 ---
 
-## 🚀 Instalación
+##  Instalación
 
 ```bash
 flutter create dolores_ar
@@ -107,19 +92,8 @@ flutter pub get
 
 <img src="capturas/01-pubspec.png" alt="pubspec.yaml" width="600">
 
-### Permisos en Android
 
-En `android/app/src/main/AndroidManifest.xml`, dentro de `<manifest>` y **antes** de `<application>`:
 
-```xml
-<uses-permission android:name="android.permission.INTERNET"/>
-<uses-permission android:name="android.permission.CAMERA"/>
-<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
-<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
-<uses-feature android:name="android.hardware.camera" android:required="false"/>
-```
-
-Y en `android/app/build.gradle` verifica `minSdkVersion 24` (mínimo 21).
 
 ### Permisos en iPhone
 
@@ -177,17 +151,6 @@ El rumbo se mide desde el norte (N = 0°, E = 90°, S = 180°, O = 270°). El bu
 <img src="capturas/10-lugar.png" alt="Clase Lugar" width="450">
 <img src="capturas/11-catalogo.png" alt="Catálogo de lugares" width="450">
 
-**Lugares del catálogo:**
-
-| Emoji | Lugar | Categoría |
-|:-----:|-------|-----------|
-| 🌳 | Jardín Principal | Plaza |
-| ⛪ | Parroquia de Nuestra Señora de los Dolores | Historia |
-| 🏛️ | Museo Casa de Visita | Museo |
-| 📜 | Museo de la Independencia Nacional | Museo |
-| 🎺 | Museo José Alfredo Jiménez | Música |
-| 🍦 | Nieves del Jardín | Gastronomía |
-| 🌹 | Tumba de José Alfredo Jiménez | Música |
 
 > ⚠️ Las coordenadas son **aproximadas** y de práctica. Deben corregirse con un recorrido de campo (ver [Prueba de campo](#-prueba-de-campo)).
 
@@ -268,7 +231,7 @@ Las coordenadas del catálogo se corrigen en el lugar:
 
 ---
 
-## 🔒 Privacidad y seguridad
+##  Privacidad y seguridad
 
 - Solo se pide ubicación **mientras se usa la app**.
 - Todo el cálculo ocurre **dentro del teléfono**: no se envía la ubicación a ningún servidor.
@@ -276,13 +239,6 @@ Las coordenadas del catálogo se corrigen en el lugar:
 - Aviso de seguridad al iniciar: *"Mira a tu alrededor, cuida tu paso y no cruces la calle viendo el teléfono"*.
 - La lista de lugares funciona sin cámara, como alternativa accesible.
 
----
-
-## ✅ Checklist de calidad
-
-## Evidencia de pruebas
-
-La suite valida cálculos geográficos, campo de visión, motor AR, pasaporte y ViewModel. Resultado: **42 pruebas aprobadas**.
 
 ### Ciclo TDD: rojo a verde
 
@@ -292,32 +248,7 @@ La captura roja reproduce de forma controlada el momento previo a implementar un
 |---|---|
 | ![Fase roja](capturas/tdd_rojo_error.png) | ![Pruebas aprobadas en la terminal de VS Code](capturas/pruebas_vscode.png) |
 
----
 
-- [x] Toda la matemática vive en `dominio/` y no importa Flutter ni plugins.
-- [x] Hay pruebas para distancia, rumbo, cruce del norte, campo de visión, ordenamiento, sellos y errores.
-- [x] Las fuentes de GPS y brújula son contratos (se pueden simular y probar).
-- [x] Existe un modo demo sin GPS ni brújula.
-- [x] La app no se rompe sin cámara, sin permiso o sin brújula.
-- [x] Se cancelan suscripciones y se libera la cámara en `dispose()`.
 
----
 
-## 🏁 Retos para seguir mejorando
 
-- 🔊 Guía de audio con `flutter_tts`.
-- 💾 Persistencia del pasaporte con `shared_preferences`.
-- 🌐 Descripciones desde la API de Wikipedia con caché.
-- ➡️ Ruta guiada con una flecha al siguiente lugar sin visitar.
-- ⚓ RA con anclas reales (`ar_flutter_plugin`).
-- 🇺🇸 Versión en inglés con internacionalización de Flutter.
-- 🎯 Mini mapa tipo radar.
-
----
-
-## 👩‍💻 Autoría
-
-Proyecto académico de **Desarrollo Móvil Integral** · Universidad Tecnológica del Norte de Guanajuato (UTNG).
-Docente: **Anastacio Rodríguez García**.
-
-> *La mejor realidad aumentada no reemplaza la mirada, la enriquece.*
