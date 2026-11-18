@@ -1,81 +1,164 @@
 # Dolores AR
 
-Dolores AR es una aplicación hecha en Flutter para mostrar lugares turísticos de Dolores Hidalgo usando ubicación, brújula y realidad aumentada.
+Aplicación turística de realidad aumentada para conocer lugares de Dolores Hidalgo y guardar visitas en un pasaporte.
 
-La aplicación calcula distancias, muestra etiquetas sobre la cámara y permite ganar sellos al acercarse a los lugares.
+## Cómo ejecutar
 
-## Captura de la aplicación
+1. Instalar las dependencias con `flutter pub get`.
+2. Ejecutar las pruebas con `flutter test`.
+3. Abrir la aplicación con `flutter run`.
 
-![Pantalla de Dolores AR](capturas/24-pantalla-inicio-app.png)
+## Trabajo con TDD
 
-## Cómo ejecutarlo
+En cada fase se siguió el ciclo rojo y verde. La captura roja muestra el error real producido antes de completar el código faltante. La captura verde muestra en Visual Studio Code el código usado para resolver esa fase.
 
-```bash
-flutter pub get
-flutter run
-```
-
-Para ejecutar las pruebas:
-
-```bash
-flutter test
-```
-
-## Todas las pruebas
-
-Se ejecutaron las siguientes 42 pruebas:
-
-1. Sin GPS o brújula la aplicación queda esperando.
-2. Con GPS y brújula calcula los lugares visibles.
-3. Al girar la brújula se actualizan los lugares visibles.
-4. La brújula se suaviza cuando hay un cambio brusco.
-5. Al acercarse a un lugar se gana el sello una sola vez.
-6. Un error de permiso muestra un mensaje sencillo.
-7. Un error desconocido no muestra información interna.
-8. La pantalla recibe una notificación cuando algo cambia.
-9. Un grado de latitud mide aproximadamente 111.2 kilómetros.
-10. La distancia del mismo punto es cero.
-11. Un lugar al frente aparece en el centro.
-12. La distancia entre dos puntos es simétrica.
-13. Un desplazamiento de 300 y 400 metros da cerca de 500 metros.
-14. El rumbo norte es cero grados.
-15. El rumbo este es 90 grados.
-16. El rumbo sur es 180 grados.
-17. Un lugar a la derecha no aparece cuando se mira al norte.
-18. El rumbo oeste es 270 grados.
-19. Al girar al este el lugar aparece en el centro.
-20. El rumbo noreste es 45 grados.
-21. Al girar un poco la etiqueta se mueve al lado contrario.
-22. Los ángulos se normalizan entre cero y 360 grados.
-23. Los lugares fuera del radio máximo se descartan.
-24. La diferencia angular toma el camino más corto.
-25. La vista funciona al cruzar de 350 a 5 grados.
-26. Suavizar un ángulo avanza poco a poco.
-27. Los lugares lejanos se dibujan debajo de los cercanos.
-28. El suavizado cruza correctamente de 350 a 10 grados.
-29. Los lugares cercanos se ven más grandes.
-30. Se obtiene el nombre del punto cardinal.
-31. Un campo de visión ancho muestra más lugares.
-32. Un lugar al frente cae en el centro de la pantalla.
-33. Se reconoce el borde derecho del campo de visión.
-34. Se reconoce el borde izquierdo del campo de visión.
-35. Se reconoce un punto a medio camino.
-36. Un lugar fuera del campo de visión no se dibuja.
-37. Las distancias se muestran en metros o kilómetros.
-38. Estar lejos de un lugar no entrega sello.
-39. Estar a menos de 40 metros entrega el sello.
-40. Estar exactamente a 40 metros todavía cuenta.
-41. Cada sello se gana una sola vez.
-42. El progreso representa la parte de lugares visitados.
-
-Resultado final: **42 pruebas aprobadas**.
-
-## Capturas reales de las pruebas
+## Fase 0. Preparar el taller
 
 ### Fase roja
 
-![Error real en la terminal de VS Code](capturas/tdd_rojo_error.png)
+En esta parte la prueba todavía falla porque falta implementar el código de la fase.
+
+![Error de la fase 0](capturas/fases/fase_00_roja.png)
 
 ### Fase verde
 
-![42 pruebas aprobadas en la terminal de VS Code](capturas/pruebas_vscode.png)
+Después se agrega el código necesario para resolver la prueba y continuar con el proyecto.
+
+![Código de la fase 0](capturas/fases/fase_00_verde.png)
+
+## Fase 1. Calcular distancia
+
+### Fase roja
+
+En esta parte la prueba todavía falla porque falta implementar el código de la fase.
+
+![Error de la fase 1](capturas/fases/fase_01_roja.png)
+
+### Fase verde
+
+Después se agrega el código necesario para resolver la prueba y continuar con el proyecto.
+
+![Código de la fase 1](capturas/fases/fase_01_verde.png)
+
+## Fase 2. Calcular rumbo y ángulos
+
+### Fase roja
+
+En esta parte la prueba todavía falla porque falta implementar el código de la fase.
+
+![Error de la fase 2](capturas/fases/fase_02_roja.png)
+
+### Fase verde
+
+Después se agrega el código necesario para resolver la prueba y continuar con el proyecto.
+
+![Código de la fase 2](capturas/fases/fase_02_verde.png)
+
+## Fase 3. Campo de visión
+
+### Fase roja
+
+En esta parte la prueba todavía falla porque falta implementar el código de la fase.
+
+![Error de la fase 3](capturas/fases/fase_03_roja.png)
+
+### Fase verde
+
+Después se agrega el código necesario para resolver la prueba y continuar con el proyecto.
+
+![Código de la fase 3](capturas/fases/fase_03_verde.png)
+
+## Fase 4. Motor de realidad aumentada
+
+### Fase roja
+
+En esta parte la prueba todavía falla porque falta implementar el código de la fase.
+
+![Error de la fase 4](capturas/fases/fase_04_roja.png)
+
+### Fase verde
+
+Después se agrega el código necesario para resolver la prueba y continuar con el proyecto.
+
+![Código de la fase 4](capturas/fases/fase_04_verde.png)
+
+## Fase 5. Pasaporte turístico
+
+### Fase roja
+
+En esta parte la prueba todavía falla porque falta implementar el código de la fase.
+
+![Error de la fase 5](capturas/fases/fase_05_roja.png)
+
+### Fase verde
+
+Después se agrega el código necesario para resolver la prueba y continuar con el proyecto.
+
+![Código de la fase 5](capturas/fases/fase_05_verde.png)
+
+## Fase 6. Fuentes y ViewModel
+
+### Fase roja
+
+En esta parte la prueba todavía falla porque falta implementar el código de la fase.
+
+![Error de la fase 6](capturas/fases/fase_06_roja.png)
+
+### Fase verde
+
+Después se agrega el código necesario para resolver la prueba y continuar con el proyecto.
+
+![Código de la fase 6](capturas/fases/fase_06_verde.png)
+
+## Fase 7. Pantalla de realidad aumentada
+
+### Fase roja
+
+En esta parte la prueba todavía falla porque falta implementar el código de la fase.
+
+![Error de la fase 7](capturas/fases/fase_07_roja.png)
+
+### Fase verde
+
+Después se agrega el código necesario para resolver la prueba y continuar con el proyecto.
+
+![Código de la fase 7](capturas/fases/fase_07_verde.png)
+
+## Fase 8. Modelo 3D
+
+### Fase roja
+
+En esta parte la prueba todavía falla porque falta implementar el código de la fase.
+
+![Error de la fase 8](capturas/fases/fase_08_roja.png)
+
+### Fase verde
+
+Después se agrega el código necesario para resolver la prueba y continuar con el proyecto.
+
+![Código de la fase 8](capturas/fases/fase_08_verde.png)
+
+## Fase 9. Prueba de campo y seguridad
+
+### Fase roja
+
+En esta parte la prueba todavía falla porque falta implementar el código de la fase.
+
+![Error de la fase 9](capturas/fases/fase_09_roja.png)
+
+### Fase verde
+
+Después se agrega el código necesario para resolver la prueba y continuar con el proyecto.
+
+![Código de la fase 9](capturas/fases/fase_09_verde.png)
+
+## Aplicación completa
+
+Esta es la aplicación ejecutándose después de terminar las fases.
+
+![Aplicación completa](capturas/24-pantalla-inicio-app.png)
+
+## Resultado
+
+Las fases quedaron documentadas una por una. Cada fase conserva su evidencia roja y verde, y al final se muestra el resultado completo de la aplicación.
+
